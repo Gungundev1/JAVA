@@ -18,7 +18,6 @@ class Soccer extends Sports{
         System.out.println( "Each team has 11 players in Soccer Class ");
     }
 }
-
 public class MethodOverRiding {
 
     public static void main(String[] args) {
