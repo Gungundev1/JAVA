@@ -25,6 +25,6 @@ public class Strings {
         System.out.println(name.lastIndexOf("a",6));//return last occurrence of the string
         System.out.println("if name is equal  "+name1.equals("tanisha"));//return true or false
         System.out.println(name1.equalsIgnoreCase("Tanisha"));//return true or false , ignoring the lowercase or uppercase
-
     }
+    String[] obj=new String[5];
 }
