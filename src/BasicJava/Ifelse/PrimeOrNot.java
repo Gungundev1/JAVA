@@ -7,9 +7,10 @@ public class PrimeOrNot {
         // To check the no. is prime or not
         Scanner input=new Scanner(System.in);
         int number= input.nextInt();
+
         int count=0;
         if (number==0||number==1){
-            System.out.printf("No is not prime");
+            System.out.println("No is not prime");
         }
         else{
             for(int i=2;i<=number;i++){
