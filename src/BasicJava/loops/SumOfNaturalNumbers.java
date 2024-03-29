@@ -2,7 +2,7 @@ package BasicJava.loops;
 
 import java.util.Scanner;
 
-public class SumOfNumbers {
+public class SumOfNaturalNumbers {
     public static void main(String[] args) {
         //sum of first n natural numbers
         Scanner input=new Scanner(System.in);
