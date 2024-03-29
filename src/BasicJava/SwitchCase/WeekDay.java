@@ -6,6 +6,7 @@ public class WeekDay {
     public static void main(String[] args) {
         // TO print weekday name of weekday number
         Scanner input =new Scanner(System.in);
+        System.out.println("Enter any weekday number");
         int week= input.nextInt();
         switch (week){
 
