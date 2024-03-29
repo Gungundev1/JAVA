@@ -3,7 +3,7 @@ package BasicJava.loops;
 import java.util.ArrayList;
 
 class primeNumber {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         ArrayList<Boolean> prime = new ArrayList<>();
         prime.add(0, false);
         prime.add(1, false);
