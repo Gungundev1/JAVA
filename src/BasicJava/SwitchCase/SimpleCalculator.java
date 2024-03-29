@@ -1,7 +1,7 @@
-package BasicJava;
+package BasicJava.SwitchCase;
 
 import java.util.Scanner;
-public class SwitchCase {
+public class SimpleCalculator {
     public static void main(String args[]) {
 // simple calculator using Arithmetic operators(+,-,*,/,%)
         float a, b,result;
@@ -23,7 +23,7 @@ public class SwitchCase {
                 System.out.println(" Multiplication of these values is: "+result);
                 break;
             case '/': result=a/b;
-                System.out.println("Divisior  of these values is: "+result);
+                System.out.println("Division  of these values is: "+result);
                 break;
             case '%':result=a%b;
                 System.out.println("modulus of these values is: "+result);
@@ -35,5 +35,4 @@ public class SwitchCase {
 
     }
 }
-
 

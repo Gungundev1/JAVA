@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ReverseNumber {
     public static void main(String[] args) {
-        // TO Reverse three number(entered by user)
+        // TO Reverse number(entered by user)
         Scanner input=new Scanner(System.in);
         int number= input.nextInt();
         int rev=0;
