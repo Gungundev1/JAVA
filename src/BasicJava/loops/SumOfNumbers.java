@@ -6,14 +6,14 @@ public class SumOfNumbers {
     public static void main(String[] args) {
         // To calculate sum of all digits (entered by user)
         Scanner input = new Scanner(System.in);
-       int number;
-        int sum=0;
-
-        while((number=input.nextInt())>0){
-            sum=sum+number;
-
+        System.out.println("Enter digits");
+       int number = input.nextInt();
+       int sum=0;
+       while (number!=0){
+           int rem=number%10;
+           sum +=rem;
+           number =number/10;
        }
-        System.out.println(sum);
-        input.close();
+        System.out.println("Sum of numbers is :"+sum);
     }
 }
