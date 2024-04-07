@@ -1,5 +1,5 @@
 package BasicJava.Functions;
-
+// Function overloading
 class OverLoading {
 
     static   void schedule(String time) {
