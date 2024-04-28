@@ -2,7 +2,7 @@ package BasicJava.Arrays;
 
 import java.util.Arrays;
 import java.util.Scanner;
-public class MissingNumberr {
+public class MissingNumber {
     // To find missing number in array
     public static void main(String[] args) {
         System.out.println("Enter size of array:");
