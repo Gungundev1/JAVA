@@ -1,4 +1,4 @@
-package Oops.Reflection;
+package Oops;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -28,7 +28,7 @@ public void publicMethod(){
 
 public class Reflection {
     public static void main(String[] args) {
-        Class<?>  clazz = Myclass.class;
+        Class<?> clazz = Myclass.class;
         System.out.println("class name: "+clazz.getName());
         System.out.println("modifiers: "+Modifier.toString(clazz.getModifiers()));
         System.out.println("Super class: "+clazz.getSuperclass().getName());
