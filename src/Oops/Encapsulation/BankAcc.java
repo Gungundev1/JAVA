@@ -3,9 +3,11 @@ class BankAccount {
     private double balance;
     public int deposit;
     public int withdraw;
+ private int accNumber;
 
-
-
+int getAccNumber(int accNumber){
+    return accNumber;
+}
     public void getBalance(double balance) {
         this.balance = balance;
         System.out.println(this.balance);
@@ -42,6 +44,6 @@ public class BankAcc {
         BAcc.getBalance(5000);
         BAcc.withdraw(6000);
         BAcc.deposit(4000);
-
+BAcc.getAccNumber(1234534);
     }
 }
