@@ -11,9 +11,11 @@ class Calculate{
         System.out.println("Area of circle is: "+radius*radius);
     }
     public void calculateArea(int length,int width){
+
         System.out.println("Area of Rectangle is: "+length*width);
     }
     public void calculateArea(int base,float height){
+
         System.out.println("Area of Triangle is: "+(base*height)/2);
     }
 }

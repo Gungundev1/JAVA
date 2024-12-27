@@ -12,5 +12,6 @@ public class LCM {
                 System.out.println();
             }
         }
+        System.out.println(016);
     }
 }

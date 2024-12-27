@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class EvenOrOdd {
     public static void main(String[] args) {
-        // To check the no. is even or odd
+//         To check the no. is even or odd
         Scanner input=new Scanner(System.in);
         System.out.println("Enter any number");
         int number=input.nextInt();
@@ -13,5 +13,7 @@ public class EvenOrOdd {
         }
         else
             System.out.println("No. is odd");
-    }
-}
+
+            }
+        }
+
