@@ -3,14 +3,14 @@ package BasicJava.Arrays;
 import java.util.Scanner;
 
 public class ReverseArray {
-//     to reverse an array
+//     To reverse an array
     public static void main(String[] args) {
         System.out.println("Enter size of array:");
         Scanner input=new Scanner(System.in);
         int n= input.nextInt();
         System.out.println("Enter elements of array:");
         int[] arr = new int[n];
-        int i=0;
+        int i;
         for ( i = 0; i<n; i++){
             arr[i]= input.nextInt();
         }
@@ -26,7 +26,6 @@ public class ReverseArray {
             int temp = arr[first];
             arr[first] = arr[last];
             arr[last] = temp;
-//            System.out.print(temp + " ");
             first++;
             last--;
         }
