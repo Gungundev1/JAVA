@@ -1,50 +1,98 @@
+package project;
+
 import java.util.Scanner;
 import java.util.Random;
 
-class RockPaperScissors{
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-        int computerScore = 0;
-        int userScore = 0;
-        while (true) {
-            System.out.println("Enter your move: rock, paper, scissors or quit");
-            String userMove = scanner.nextLine().toLowerCase();
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.Random;
 
-            if (userMove.equals("quit")) {
-                break;
-            }
+public class RockPaperScissor extends JFrame implements ActionListener {
+    private JLabel statusLabel, scoreLabel, computerMoveLabel;
+    private JButton rockButton, paperButton, scissorsButton, quitButton;
+    private int userScore = 0;
+    private int computerScore = 0;
+    private String userName;
 
-            int computerInt = random.nextInt(3);
-            String computerMove;
+    public RockPaperScissor(String userName) {
+        this.userName = userName;
 
-            if (computerInt == 0) {
-                computerMove = "rock";
-            } else if (computerInt == 1) {
-                computerMove = "paper";
-            } else {
-                computerMove = "scissors";
-            }
+        setTitle("Rock Paper Scissors");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new GridLayout(5, 1));
 
-            System.out.println("Computer plays: " + computerMove);
+        statusLabel = new JLabel("Choose your move:", SwingConstants.CENTER);
+        add(statusLabel);
 
-            if (userMove.equals(computerMove)) {
-                System.out.println("It's a tie!");
-            } else if ((userMove.equals("rock") && computerMove.equals("scissors"))
-                    || (userMove.equals("scissors") && computerMove.equals("paper"))
-                    || (userMove.equals("paper") && computerMove.equals("rock"))) {
-                System.out.println("You win this round!");
-                userScore++;
-            } else {
-                System.out.println("Computer wins this round!");
-                computerScore++;
-            }
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new FlowLayout());
+
+        rockButton = new JButton("Rock");
+        paperButton = new JButton("Paper");
+        scissorsButton = new JButton("Scissors");
+        quitButton = new JButton("Quit");
+
+        rockButton.addActionListener(this);
+        paperButton.addActionListener(this);
+        scissorsButton.addActionListener(this);
+        quitButton.addActionListener(this);
+
+        buttonPanel.add(rockButton);
+        buttonPanel.add(paperButton);
+        buttonPanel.add(scissorsButton);
+        buttonPanel.add(quitButton);
+
+        add(buttonPanel);
+
+        computerMoveLabel = new JLabel("Computer played: ", SwingConstants.CENTER);
+        add(computerMoveLabel);
+
+        scoreLabel = new JLabel("Score - " + userName + ": 0, Computer: 0", SwingConstants.CENTER);
+        add(scoreLabel);
+
+        setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String userMove = "";
+        if (e.getSource() == rockButton) userMove = "rock";
+        else if (e.getSource() == paperButton) userMove = "paper";
+        else if (e.getSource() == scissorsButton) userMove = "scissors";
+        else if (e.getSource() == quitButton) {
+            String winner = (userScore > computerScore) ? userName + " wins!" :
+                    (computerScore > userScore) ? "Computer wins!" : "It's a draw!";
+            JOptionPane.showMessageDialog(this, "Final Score:\n" + userName + ": " + userScore + "\nComputer: " + computerScore + "\n" + winner);
+            System.exit(0);
         }
-        if(computerScore>userScore)
-            System.out.println("Computer Wins by" + "  " +computerScore+ "  " +" Score");
-        else
-            System.out.println("User Wins by"+userScore+"Score");
-        System.out.println("Thanks for playing! Goodbye.");
-        scanner.close();
+
+        // Generate computer move
+        String[] moves = {"rock", "paper", "scissors"};
+        String computerMove = moves[new Random().nextInt(3)];
+
+        computerMoveLabel.setText("Computer played: " + computerMove);
+
+        // Game logic
+        if (userMove.equals(computerMove)) {
+            statusLabel.setText("It's a tie!");
+        } else if ((userMove.equals("rock") && computerMove.equals("scissors")) ||
+                (userMove.equals("scissors") && computerMove.equals("paper")) ||
+                (userMove.equals("paper") && computerMove.equals("rock"))) {
+            statusLabel.setText("You win this round!");
+            userScore++;
+        } else {
+            statusLabel.setText("Computer wins this round!");
+            computerScore++;
+        }
+
+        scoreLabel.setText("Score - " + userName + ": " + userScore + ", Computer: " + computerScore);
+    }
+
+    public static void main(String[] args) {
+        String name = JOptionPane.showInputDialog(null, "Enter your name:");
+        if (name == null || name.trim().isEmpty()) name = "Player";
+        new RockPaperScissor(name);
     }
 }
