@@ -22,7 +22,7 @@ public class MaxMinValue {
         System.out.println("Largest number is: "+max);
         int min=array[0];
         for (int i=1;i<n;i++){
-            if (min>array[i]){
+            if (array[i]<min){
                 min=array[i];
             }
         }
